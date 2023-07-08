@@ -1,1 +1,9 @@
-# MODEL_SELECTION
+In the grid search code, the dataset is first preprocessed by splitting it into training and test sets using `train_test_split` and applying feature scaling using `StandardScaler`. The kernel SVM model is then trained on the training set using the `SVC` class from scikit-learn. The model is evaluated on the test set by predicting the target variable and computing the confusion matrix and accuracy score. 
+
+Next, cross-validation is performed using `cross_val_score` to estimate the model's performance. The code specifies the number of folds (10 in this case) and computes the mean accuracy and standard deviation across the folds. 
+
+Grid search is then applied using `GridSearchCV` to find the best combination of hyperparameters for the SVM model. It defines a set of parameter values to be searched, including different values of 'C' (the regularization parameter) and 'kernel' (the type of kernel function) for linear and radial basis function (RBF) kernels. The grid search evaluates each combination of parameters using cross-validation and selects the best model based on the specified scoring metric (accuracy in this case). The best accuracy and corresponding parameters are then printed.
+
+Finally, the code visualizes the decision boundary of the SVM model on the training set by creating a meshgrid of feature values and plotting the predicted classes. The data points are color-coded based on their actual classes, and the resulting plot provides a visualization of how the SVM model separates the classes based on the chosen features (Age and Estimated Salary).
+
+In summary, the provided code demonstrates the process of model selection using grid search and the evaluation of the selected model using k-fold cross-validation. It also includes visualizations to help understand the model's decision boundary.
